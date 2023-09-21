@@ -1,0 +1,76 @@
+Test name: evm2
+
+
+Compilation complete
+
+Optimisation O0
+
+1: 35.92
+2: 41.73
+3: 45.86
+4: 48.75
+5: 54.92
+6: 61.60
+Minimum time: 35.92
+
+Optimisation O1
+
+1: 33.38
+2: 36.06
+3: 39.00
+4: 42.03
+5: 45.21
+6: 48.15
+Minimum time: 33.38
+
+Optimisation O2
+
+1: 31.81
+2: 35.17
+3: 38.11
+4: 41.36
+5: 43.51
+6: 47.60
+Minimum time: 31.81
+
+Optimisation O3
+
+1: 33.25
+2: 34.49
+3: 39.13
+4: 39.71
+5: 44.91
+6: 49.23
+Minimum time: 33.25
+
+Optimisation Os
+
+1: 39.50
+2: 42.86
+3: 48.36
+4: 54.72
+5: 55.61
+6: 61.13
+Minimum time: 39.50
+
+Optimisation Ofast
+
+1: 31.38
+2: 34.58
+3: 38.86
+4: 42.20
+5: 44.91
+6: 47.24
+Minimum time: 31.38
+
+Optimisation Og
+
+1: 32.55
+2: 35.06
+3: 39.16
+4: 40.76
+5: 44.36
+6: 48.42
+Minimum time: 32.55
+
+Test complete
