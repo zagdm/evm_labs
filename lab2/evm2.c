@@ -3,8 +3,8 @@
 #include <math.h>
 
 #define input_error 1
-#define step 70000000
-#define init_quant 600000000
+#define step 50000000
+#define init_quant 550000000
 
 double e_sin(double x) {
 	return exp(x) * sin(x);

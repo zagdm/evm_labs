@@ -74,7 +74,7 @@ echo -e "\n\nOptimisation O$opt" >> toutput.txt
 min=1000000
 for ((i = 1; i <= $repeat_count; i++)) do
 echo -n -e "\n$i:" >>toutput.txt
-nmin=$((sudo time -f "%U" ./prog$opt $i $arg 1>>toutput.txt ) 2>&1)
+nmin=$(( /usr/bin/time -f "%e" ./prog$opt $i $arg 1>>toutput.txt ) 2>&1)
 echo "$i: $nmin" >> tresult.txt
 if (( $(echo "$nmin < $min" |bc -l) ));
 then min=$nmin
