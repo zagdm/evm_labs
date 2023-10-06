@@ -11,6 +11,7 @@ opt_set=(0 1 2 3 s fast g)
 test_name=$1
 comp_arg=''
 repeat_count=1
+steps_count=1
 input_files=''
 arg=''
 shift
@@ -20,6 +21,7 @@ case "$1" in
 -O) opt_set=( $2 ) ;;
 -arg) arg=$2 ;;
 -r) repeat_count=$2 ;;
+-s) steps_count=$2 ;;
 -inf) input_files=$2 ;;
 *) break ;;
 esac
@@ -71,16 +73,17 @@ echo -e "\nCompilation complete" >> tresult.txt
 for opt in ${opt_set[@]}; do
 echo -e "\nOptimisation O$opt\n" >> tresult.txt
 echo -e "\n\nOptimisation O$opt" >> toutput.txt
+for ((n = 1; n <= $steps_count; n++)) do
 min=1000000
 for ((i = 1; i <= $repeat_count; i++)) do
-echo -n -e "\n$i:" >>toutput.txt
-nmin=$(( /usr/bin/time -f "%e" ./prog$opt $i $arg 1>>toutput.txt ) 2>&1)
-echo "$i: $nmin" >> tresult.txt
+echo -n -e "\n$n:$i:" >>toutput.txt
+nmin=$(( /usr/bin/time -f "%e" ./prog$opt $n $arg 1>>toutput.txt ) 2>&1)
 if (( $(echo "$nmin < $min" |bc -l) ));
 then min=$nmin
 fi
 done
-echo "Minimum time: $min" >> tresult.txt
+echo "$n: $min" >> tresult.txt
+done
 done
 echo -e "\nTest complete" >> tresult.txt
 
