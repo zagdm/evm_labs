@@ -1,0 +1,178 @@
+	.file	"evm3.c"
+	.text
+	.globl	calc_integral
+	.type	calc_integral, @function
+calc_integral:
+.LFB6:
+	.cfi_startproc
+	pushl	%ebp
+	.cfi_def_cfa_offset 8
+	.cfi_offset 5, -8
+	movl	%esp, %ebp
+	.cfi_def_cfa_register 5
+	pushl	%ebx
+	subl	$68, %esp
+	.cfi_offset 3, -12
+	call	__x86.get_pc_thunk.bx
+	addl	$_GLOBAL_OFFSET_TABLE_, %ebx
+	movl	12(%ebp), %eax
+	movl	%eax, -48(%ebp)
+	movl	16(%ebp), %eax
+	movl	%eax, -44(%ebp)
+	movl	20(%ebp), %eax
+	movl	%eax, -56(%ebp)
+	movl	24(%ebp), %eax
+	movl	%eax, -52(%ebp)
+	fldl	-56(%ebp)
+	fsubl	-48(%ebp)
+	fildl	8(%ebp)
+	fdivrp	%st, %st(1)
+	fstpl	-16(%ebp)
+	subl	$8, %esp
+	pushl	-44(%ebp)
+	pushl	-48(%ebp)
+	call	exp@PLT
+	addl	$16, %esp
+	fstpl	-64(%ebp)
+	subl	$8, %esp
+	pushl	-44(%ebp)
+	pushl	-48(%ebp)
+	call	sin@PLT
+	addl	$16, %esp
+	fmull	-64(%ebp)
+	fstpl	-64(%ebp)
+	subl	$8, %esp
+	pushl	-52(%ebp)
+	pushl	-56(%ebp)
+	call	exp@PLT
+	addl	$16, %esp
+	fstpl	-72(%ebp)
+	subl	$8, %esp
+	pushl	-52(%ebp)
+	pushl	-56(%ebp)
+	call	sin@PLT
+	addl	$16, %esp
+	fmull	-72(%ebp)
+	fldl	-64(%ebp)
+	faddp	%st, %st(1)
+	fldl	.LC0@GOTOFF(%ebx)
+	fdivrp	%st, %st(1)
+	fstpl	-24(%ebp)
+	movl	$1, -28(%ebp)
+	jmp	.L2
+.L3:
+	fildl	-28(%ebp)
+	fmull	-16(%ebp)
+	faddl	-48(%ebp)
+	subl	$8, %esp
+	leal	-8(%esp), %esp
+	fstpl	(%esp)
+	call	exp@PLT
+	addl	$16, %esp
+	fstpl	-64(%ebp)
+	fildl	-28(%ebp)
+	fmull	-16(%ebp)
+	faddl	-48(%ebp)
+	subl	$8, %esp
+	leal	-8(%esp), %esp
+	fstpl	(%esp)
+	call	sin@PLT
+	addl	$16, %esp
+	fmull	-64(%ebp)
+	fldl	-24(%ebp)
+	faddp	%st, %st(1)
+	fstpl	-24(%ebp)
+	addl	$1, -28(%ebp)
+.L2:
+	movl	-28(%ebp), %eax
+	cmpl	8(%ebp), %eax
+	jl	.L3
+	fldl	-24(%ebp)
+	fmull	-16(%ebp)
+	movl	-4(%ebp), %ebx
+	leave
+	.cfi_restore 5
+	.cfi_restore 3
+	.cfi_def_cfa 4, 4
+	ret
+	.cfi_endproc
+.LFE6:
+	.size	calc_integral, .-calc_integral
+	.section	.rodata
+.LC3:
+	.string	"%f"
+	.text
+	.globl	main
+	.type	main, @function
+main:
+.LFB7:
+	.cfi_startproc
+	leal	4(%esp), %ecx
+	.cfi_def_cfa 1, 0
+	andl	$-16, %esp
+	pushl	-4(%ecx)
+	pushl	%ebp
+	movl	%esp, %ebp
+	.cfi_escape 0x10,0x5,0x2,0x75,0
+	pushl	%ebx
+	pushl	%ecx
+	.cfi_escape 0xf,0x3,0x75,0x78,0x6
+	.cfi_escape 0x10,0x3,0x2,0x75,0x7c
+	subl	$16, %esp
+	call	__x86.get_pc_thunk.bx
+	addl	$_GLOBAL_OFFSET_TABLE_, %ebx
+	subl	$12, %esp
+	fldl	.LC1@GOTOFF(%ebx)
+	leal	-8(%esp), %esp
+	fstpl	(%esp)
+	fldz
+	leal	-8(%esp), %esp
+	fstpl	(%esp)
+	pushl	$1000000
+	call	calc_integral
+	addl	$32, %esp
+	fstpl	-16(%ebp)
+	subl	$4, %esp
+	pushl	-12(%ebp)
+	pushl	-16(%ebp)
+	leal	.LC3@GOTOFF(%ebx), %eax
+	pushl	%eax
+	call	printf@PLT
+	addl	$16, %esp
+	movl	$0, %eax
+	leal	-8(%ebp), %esp
+	popl	%ecx
+	.cfi_restore 1
+	.cfi_def_cfa 1, 0
+	popl	%ebx
+	.cfi_restore 3
+	popl	%ebp
+	.cfi_restore 5
+	leal	-4(%ecx), %esp
+	.cfi_def_cfa 4, 4
+	ret
+	.cfi_endproc
+.LFE7:
+	.size	main, .-main
+	.section	.rodata
+	.align 8
+.LC0:
+	.long	0
+	.long	1073741824
+	.align 8
+.LC1:
+	.long	1413754136
+	.long	1074340347
+	.section	.text.__x86.get_pc_thunk.bx,"axG",@progbits,__x86.get_pc_thunk.bx,comdat
+	.globl	__x86.get_pc_thunk.bx
+	.hidden	__x86.get_pc_thunk.bx
+	.type	__x86.get_pc_thunk.bx, @function
+__x86.get_pc_thunk.bx:
+.LFB8:
+	.cfi_startproc
+	movl	(%esp), %ebx
+	ret
+	.cfi_endproc
+.LFE8:
+	.ident	"GCC: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0"
+	.section	.note.GNU-stack,"",@progbits

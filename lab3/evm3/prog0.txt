@@ -1,0 +1,151 @@
+	.file	"evm3.c"
+	.text
+	.globl	calc_integral
+	.type	calc_integral, @function
+calc_integral:
+.LFB6:
+	.cfi_startproc
+	endbr64
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	subq	$80, %rsp
+	movl	%edi, -36(%rbp)
+	movsd	%xmm0, -48(%rbp)
+	movsd	%xmm1, -56(%rbp)
+	movsd	-56(%rbp), %xmm0
+	subsd	-48(%rbp), %xmm0
+	pxor	%xmm1, %xmm1
+	cvtsi2sdl	-36(%rbp), %xmm1
+	divsd	%xmm1, %xmm0
+	movsd	%xmm0, -8(%rbp)
+	movq	-48(%rbp), %rax
+	movq	%rax, %xmm0
+	call	exp@PLT
+	movsd	%xmm0, -64(%rbp)
+	movq	-48(%rbp), %rax
+	movq	%rax, %xmm0
+	call	sin@PLT
+	movapd	%xmm0, %xmm2
+	mulsd	-64(%rbp), %xmm2
+	movsd	%xmm2, -64(%rbp)
+	movq	-56(%rbp), %rax
+	movq	%rax, %xmm0
+	call	exp@PLT
+	movsd	%xmm0, -72(%rbp)
+	movq	-56(%rbp), %rax
+	movq	%rax, %xmm0
+	call	sin@PLT
+	mulsd	-72(%rbp), %xmm0
+	addsd	-64(%rbp), %xmm0
+	movsd	.LC0(%rip), %xmm1
+	divsd	%xmm1, %xmm0
+	movsd	%xmm0, -16(%rbp)
+	movl	$1, -20(%rbp)
+	jmp	.L2
+.L3:
+	pxor	%xmm0, %xmm0
+	cvtsi2sdl	-20(%rbp), %xmm0
+	mulsd	-8(%rbp), %xmm0
+	addsd	-48(%rbp), %xmm0
+	movq	%xmm0, %rax
+	movq	%rax, %xmm0
+	call	exp@PLT
+	movsd	%xmm0, -64(%rbp)
+	pxor	%xmm0, %xmm0
+	cvtsi2sdl	-20(%rbp), %xmm0
+	mulsd	-8(%rbp), %xmm0
+	movapd	%xmm0, %xmm3
+	addsd	-48(%rbp), %xmm3
+	movq	%xmm3, %rax
+	movq	%rax, %xmm0
+	call	sin@PLT
+	mulsd	-64(%rbp), %xmm0
+	movsd	-16(%rbp), %xmm1
+	addsd	%xmm1, %xmm0
+	movsd	%xmm0, -16(%rbp)
+	addl	$1, -20(%rbp)
+.L2:
+	movl	-20(%rbp), %eax
+	cmpl	-36(%rbp), %eax
+	jl	.L3
+	movsd	-16(%rbp), %xmm0
+	mulsd	-8(%rbp), %xmm0
+	movq	%xmm0, %rax
+	movq	%rax, %xmm0
+	leave
+	.cfi_def_cfa 7, 8
+	ret
+	.cfi_endproc
+.LFE6:
+	.size	calc_integral, .-calc_integral
+	.section	.rodata
+.LC3:
+	.string	"%f"
+	.text
+	.globl	main
+	.type	main, @function
+main:
+.LFB7:
+	.cfi_startproc
+	endbr64
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset 6, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register 6
+	subq	$16, %rsp
+	movsd	.LC1(%rip), %xmm0
+	movapd	%xmm0, %xmm1
+	movq	.LC2(%rip), %rax
+	movq	%rax, %xmm0
+	movl	$1000000, %edi
+	call	calc_integral
+	movq	%xmm0, %rax
+	movq	%rax, -8(%rbp)
+	movq	-8(%rbp), %rax
+	movq	%rax, %xmm0
+	leaq	.LC3(%rip), %rax
+	movq	%rax, %rdi
+	movl	$1, %eax
+	call	printf@PLT
+	movl	$0, %eax
+	leave
+	.cfi_def_cfa 7, 8
+	ret
+	.cfi_endproc
+.LFE7:
+	.size	main, .-main
+	.section	.rodata
+	.align 8
+.LC0:
+	.long	0
+	.long	1073741824
+	.align 8
+.LC1:
+	.long	1413754136
+	.long	1074340347
+	.align 8
+.LC2:
+	.long	0
+	.long	0
+	.ident	"GCC: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0"
+	.section	.note.GNU-stack,"",@progbits
+	.section	.note.gnu.property,"a"
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	"GNU"
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+4:

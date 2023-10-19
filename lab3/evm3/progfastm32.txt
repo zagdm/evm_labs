@@ -1,0 +1,182 @@
+	.file	"evm3.c"
+	.text
+	.p2align 4
+	.globl	calc_integral
+	.type	calc_integral, @function
+calc_integral:
+.LFB39:
+	.cfi_startproc
+	call	__x86.get_pc_thunk.dx
+	addl	$_GLOBAL_OFFSET_TABLE_, %edx
+	subl	$12, %esp
+	.cfi_def_cfa_offset 16
+	fldl	20(%esp)
+	fldl	28(%esp)
+	movl	16(%esp), %ecx
+	fld	%st(0)
+	movl	%ecx, (%esp)
+	fsub	%st(2), %st
+	fildl	(%esp)
+	fdivrp	%st, %st(1)
+	fld	%st(2)
+	fldl2e
+	fld1
+	fld	%st(1)
+	fmul	%st(6), %st
+	fld	%st(0)
+	frndint
+	fsubr	%st, %st(1)
+	fxch	%st(1)
+	f2xm1
+	fadd	%st(2), %st
+	fscale
+	fstp	%st(1)
+	fxch	%st(3)
+	fsin
+	fstpl	(%esp)
+	fld	%st(4)
+	fmul	%st(2), %st
+	fld	%st(0)
+	frndint
+	fsubr	%st, %st(1)
+	fxch	%st(1)
+	f2xm1
+	faddp	%st, %st(2)
+	fxch	%st(1)
+	fscale
+	fstp	%st(1)
+	fxch	%st(4)
+	fsin
+	fxch	%st(2)
+	fmull	(%esp)
+	fxch	%st(4)
+	fmulp	%st, %st(2)
+	fxch	%st(3)
+	faddp	%st, %st(1)
+	fmuls	.LC2@GOTOFF(%edx)
+	cmpl	$1, %ecx
+	jle	.L7
+	movl	$1, %eax
+	.p2align 4,,10
+	.p2align 3
+.L3:
+	movl	%eax, (%esp)
+	fildl	(%esp)
+	addl	$1, %eax
+	fmul	%st(2), %st
+	fadd	%st(4), %st
+	fld	%st(0)
+	fmul	%st(4), %st
+	fld	%st(0)
+	frndint
+	fsubr	%st, %st(1)
+	fxch	%st(1)
+	f2xm1
+	fadds	.LC1@GOTOFF(%edx)
+	fscale
+	fstp	%st(1)
+	fxch	%st(1)
+	fsin
+	fmulp	%st, %st(1)
+	faddp	%st, %st(1)
+	cmpl	%eax, %ecx
+	jne	.L3
+	fstp	%st(2)
+	fstp	%st(2)
+	jmp	.L2
+	.p2align 4,,10
+	.p2align 3
+.L7:
+	fstp	%st(2)
+	fstp	%st(2)
+.L2:
+	fmulp	%st, %st(1)
+	addl	$12, %esp
+	.cfi_def_cfa_offset 4
+	ret
+	.cfi_endproc
+.LFE39:
+	.size	calc_integral, .-calc_integral
+	.section	.rodata.str1.1,"aMS",@progbits,1
+.LC5:
+	.string	"%f"
+	.section	.text.startup,"ax",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB40:
+	.cfi_startproc
+	leal	4(%esp), %ecx
+	.cfi_def_cfa 1, 0
+	andl	$-16, %esp
+	pushl	-4(%ecx)
+	pushl	%ebp
+	movl	%esp, %ebp
+	.cfi_escape 0x10,0x5,0x2,0x75,0
+	pushl	%ebx
+	.cfi_escape 0x10,0x3,0x2,0x75,0x7c
+	call	__x86.get_pc_thunk.bx
+	addl	$_GLOBAL_OFFSET_TABLE_, %ebx
+	pushl	%ecx
+	.cfi_escape 0xf,0x3,0x75,0x78,0x6
+	subl	$4, %esp
+	pushl	$1074340347
+	pushl	$1413754136
+	pushl	$0
+	pushl	$0
+	pushl	$1000000
+	call	calc_integral
+	addl	$16, %esp
+	leal	.LC5@GOTOFF(%ebx), %eax
+	fstpl	(%esp)
+	pushl	%eax
+	pushl	$1
+	call	__printf_chk@PLT
+	addl	$16, %esp
+	leal	-8(%ebp), %esp
+	xorl	%eax, %eax
+	popl	%ecx
+	.cfi_restore 1
+	.cfi_def_cfa 1, 0
+	popl	%ebx
+	.cfi_restore 3
+	popl	%ebp
+	.cfi_restore 5
+	leal	-4(%ecx), %esp
+	.cfi_def_cfa 4, 4
+	ret
+	.cfi_endproc
+.LFE40:
+	.size	main, .-main
+	.section	.rodata.cst4,"aM",@progbits,4
+	.align 4
+.LC1:
+	.long	1065353216
+	.align 4
+.LC2:
+	.long	1056964608
+	.section	.text.__x86.get_pc_thunk.dx,"axG",@progbits,__x86.get_pc_thunk.dx,comdat
+	.globl	__x86.get_pc_thunk.dx
+	.hidden	__x86.get_pc_thunk.dx
+	.type	__x86.get_pc_thunk.dx, @function
+__x86.get_pc_thunk.dx:
+.LFB41:
+	.cfi_startproc
+	movl	(%esp), %edx
+	ret
+	.cfi_endproc
+.LFE41:
+	.section	.text.__x86.get_pc_thunk.bx,"axG",@progbits,__x86.get_pc_thunk.bx,comdat
+	.globl	__x86.get_pc_thunk.bx
+	.hidden	__x86.get_pc_thunk.bx
+	.type	__x86.get_pc_thunk.bx, @function
+__x86.get_pc_thunk.bx:
+.LFB42:
+	.cfi_startproc
+	movl	(%esp), %ebx
+	ret
+	.cfi_endproc
+.LFE42:
+	.ident	"GCC: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0"
+	.section	.note.GNU-stack,"",@progbits

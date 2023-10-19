@@ -1,0 +1,270 @@
+	.file	"evm3.c"
+	.text
+	.p2align 4
+	.globl	calc_integral
+	.type	calc_integral, @function
+calc_integral:
+.LFB39:
+	.cfi_startproc
+	endbr64
+	movapd	%xmm1, %xmm2
+	movapd	%xmm0, %xmm3
+	pushq	%r13
+	.cfi_def_cfa_offset 16
+	.cfi_offset 13, -16
+	subsd	%xmm0, %xmm2
+	pxor	%xmm0, %xmm0
+	pushq	%r12
+	.cfi_def_cfa_offset 24
+	.cfi_offset 12, -24
+	cvtsi2sdl	%edi, %xmm0
+	pushq	%rbp
+	.cfi_def_cfa_offset 32
+	.cfi_offset 6, -32
+	movl	%edi, %ebp
+	pushq	%rbx
+	.cfi_def_cfa_offset 40
+	.cfi_offset 3, -40
+	divsd	%xmm0, %xmm2
+	subq	$168, %rsp
+	.cfi_def_cfa_offset 208
+	movapd	%xmm3, %xmm0
+	movsd	%xmm3, 152(%rsp)
+	movsd	%xmm1, 32(%rsp)
+	movsd	%xmm2, 144(%rsp)
+	call	exp@PLT
+	movsd	%xmm0, (%rsp)
+	movsd	152(%rsp), %xmm0
+	call	sin@PLT
+	movsd	32(%rsp), %xmm1
+	movsd	%xmm0, 16(%rsp)
+	movapd	%xmm1, %xmm0
+	movsd	%xmm1, 48(%rsp)
+	call	exp@PLT
+	movsd	48(%rsp), %xmm1
+	movsd	%xmm0, 32(%rsp)
+	movapd	%xmm1, %xmm0
+	call	sin@PLT
+	movsd	(%rsp), %xmm7
+	mulsd	16(%rsp), %xmm7
+	movapd	%xmm0, %xmm1
+	mulsd	32(%rsp), %xmm1
+	movapd	%xmm7, %xmm0
+	movsd	.LC1(%rip), %xmm7
+	addsd	%xmm1, %xmm0
+	mulsd	%xmm0, %xmm7
+	movsd	%xmm7, 104(%rsp)
+	cmpl	$1, %ebp
+	jle	.L2
+	leal	-2(%rbp), %eax
+	leal	-1(%rbp), %r13d
+	cmpl	$2, %eax
+	jbe	.L7
+	movsd	144(%rsp), %xmm7
+	movl	%r13d, %r12d
+	xorl	%ebx, %ebx
+	movsd	152(%rsp), %xmm4
+	movdqa	.LC0(%rip), %xmm3
+	shrl	$2, %r12d
+	unpcklpd	%xmm4, %xmm4
+	unpcklpd	%xmm7, %xmm7
+	movaps	%xmm4, 128(%rsp)
+	pxor	%xmm4, %xmm4
+	movaps	%xmm7, 112(%rsp)
+	.p2align 4,,10
+	.p2align 3
+.L4:
+	movapd	112(%rsp), %xmm5
+	movdqa	%xmm3, %xmm1
+	movaps	%xmm4, 80(%rsp)
+	addl	$1, %ebx
+	cvtdq2pd	%xmm1, %xmm2
+	pshufd	$238, %xmm1, %xmm1
+	movapd	128(%rsp), %xmm6
+	paddd	.LC2(%rip), %xmm3
+	mulpd	%xmm5, %xmm2
+	cvtdq2pd	%xmm1, %xmm1
+	mulpd	%xmm5, %xmm1
+	movaps	%xmm3, 64(%rsp)
+	addpd	%xmm6, %xmm2
+	addpd	%xmm6, %xmm1
+	movapd	%xmm2, %xmm0
+	movaps	%xmm2, 32(%rsp)
+	movaps	%xmm1, 16(%rsp)
+	call	_ZGVbN2v_exp@PLT
+	movapd	16(%rsp), %xmm1
+	movaps	%xmm0, (%rsp)
+	movapd	%xmm1, %xmm0
+	movaps	%xmm1, 48(%rsp)
+	call	_ZGVbN2v_exp@PLT
+	movapd	32(%rsp), %xmm2
+	movaps	%xmm0, 16(%rsp)
+	movapd	%xmm2, %xmm0
+	call	_ZGVbN2v_sin@PLT
+	movapd	48(%rsp), %xmm1
+	movaps	%xmm0, 32(%rsp)
+	movapd	%xmm1, %xmm0
+	call	_ZGVbN2v_sin@PLT
+	movapd	(%rsp), %xmm7
+	cmpl	%ebx, %r12d
+	movapd	80(%rsp), %xmm4
+	mulpd	32(%rsp), %xmm7
+	movapd	%xmm0, %xmm1
+	movdqa	64(%rsp), %xmm3
+	mulpd	16(%rsp), %xmm1
+	movapd	%xmm7, %xmm0
+	addpd	%xmm1, %xmm0
+	addpd	%xmm0, %xmm4
+	jne	.L4
+	movapd	%xmm4, %xmm0
+	movl	%r13d, %eax
+	unpckhpd	%xmm4, %xmm0
+	andl	$-4, %eax
+	addpd	%xmm4, %xmm0
+	addsd	104(%rsp), %xmm0
+	leal	1(%rax), %ebx
+	movsd	%xmm0, 104(%rsp)
+	cmpl	%eax, %r13d
+	je	.L2
+.L3:
+	pxor	%xmm1, %xmm1
+	cvtsi2sdl	%ebx, %xmm1
+	mulsd	144(%rsp), %xmm1
+	addsd	152(%rsp), %xmm1
+	movapd	%xmm1, %xmm0
+	movsd	%xmm1, 16(%rsp)
+	call	exp@PLT
+	movsd	16(%rsp), %xmm1
+	movsd	%xmm0, (%rsp)
+	movapd	%xmm1, %xmm0
+	call	sin@PLT
+	mulsd	(%rsp), %xmm0
+	leal	1(%rbx), %eax
+	addsd	104(%rsp), %xmm0
+	movsd	%xmm0, 104(%rsp)
+	cmpl	%eax, %ebp
+	jle	.L2
+	pxor	%xmm1, %xmm1
+	addl	$2, %ebx
+	cvtsi2sdl	%eax, %xmm1
+	mulsd	144(%rsp), %xmm1
+	addsd	152(%rsp), %xmm1
+	movapd	%xmm1, %xmm0
+	movsd	%xmm1, 16(%rsp)
+	call	exp@PLT
+	movsd	16(%rsp), %xmm1
+	movsd	%xmm0, (%rsp)
+	movapd	%xmm1, %xmm0
+	call	sin@PLT
+	mulsd	(%rsp), %xmm0
+	movsd	104(%rsp), %xmm6
+	addsd	%xmm0, %xmm6
+	movsd	%xmm6, 104(%rsp)
+	cmpl	%ebx, %ebp
+	jle	.L2
+	pxor	%xmm1, %xmm1
+	cvtsi2sdl	%ebx, %xmm1
+	mulsd	144(%rsp), %xmm1
+	addsd	152(%rsp), %xmm1
+	movapd	%xmm1, %xmm0
+	movsd	%xmm1, 16(%rsp)
+	call	exp@PLT
+	movsd	16(%rsp), %xmm1
+	movsd	%xmm0, (%rsp)
+	movapd	%xmm1, %xmm0
+	call	sin@PLT
+	mulsd	(%rsp), %xmm0
+	addsd	104(%rsp), %xmm0
+	movsd	%xmm0, 104(%rsp)
+.L2:
+	movsd	144(%rsp), %xmm0
+	mulsd	104(%rsp), %xmm0
+	addq	$168, %rsp
+	.cfi_remember_state
+	.cfi_def_cfa_offset 40
+	popq	%rbx
+	.cfi_def_cfa_offset 32
+	popq	%rbp
+	.cfi_def_cfa_offset 24
+	popq	%r12
+	.cfi_def_cfa_offset 16
+	popq	%r13
+	.cfi_def_cfa_offset 8
+	ret
+.L7:
+	.cfi_restore_state
+	movl	$1, %ebx
+	jmp	.L3
+	.cfi_endproc
+.LFE39:
+	.size	calc_integral, .-calc_integral
+	.section	.rodata.str1.1,"aMS",@progbits,1
+.LC5:
+	.string	"%f"
+	.section	.text.startup,"ax",@progbits
+	.p2align 4
+	.globl	main
+	.type	main, @function
+main:
+.LFB40:
+	.cfi_startproc
+	endbr64
+	subq	$8, %rsp
+	.cfi_def_cfa_offset 16
+	movsd	.LC3(%rip), %xmm1
+	movl	$1000000, %edi
+	pxor	%xmm0, %xmm0
+	call	calc_integral
+	movl	$1, %edi
+	movl	$1, %eax
+	leaq	.LC5(%rip), %rsi
+	call	__printf_chk@PLT
+	xorl	%eax, %eax
+	addq	$8, %rsp
+	.cfi_def_cfa_offset 8
+	ret
+	.cfi_endproc
+.LFE40:
+	.size	main, .-main
+	.section	.rodata.cst16,"aM",@progbits,16
+	.align 16
+.LC0:
+	.long	1
+	.long	2
+	.long	3
+	.long	4
+	.section	.rodata.cst8,"aM",@progbits,8
+	.align 8
+.LC1:
+	.long	0
+	.long	1071644672
+	.section	.rodata.cst16
+	.align 16
+.LC2:
+	.long	4
+	.long	4
+	.long	4
+	.long	4
+	.section	.rodata.cst8
+	.align 8
+.LC3:
+	.long	1413754136
+	.long	1074340347
+	.ident	"GCC: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0"
+	.section	.note.GNU-stack,"",@progbits
+	.section	.note.gnu.property,"a"
+	.align 8
+	.long	1f - 0f
+	.long	4f - 1f
+	.long	5
+0:
+	.string	"GNU"
+1:
+	.align 8
+	.long	0xc0000002
+	.long	3f - 2f
+2:
+	.long	0x3
+3:
+	.align 8
+4:
