@@ -1,0 +1,110 @@
+calc_integral:
+        @ args = 0, pretend = 0, frame = 48
+        @ frame_needed = 1, uses_anonymous_args = 0
+        push    {r7, lr}
+        vpush.64        {d8, d9}
+        sub     sp, sp, #48
+        add     r7, sp, #0
+        str     r0, [r7, #20]
+        vstr.64 d0, [r7, #8]
+        vstr.64 d1, [r7]
+        vldr.64 d6, [r7]
+        vldr.64 d7, [r7, #8]
+        vsub.f64        d5, d6, d7
+        ldr     r3, [r7, #20]
+        vmov    s15, r3 @ int
+        vcvt.f64.s32    d6, s15
+        vdiv.f64        d7, d5, d6
+        vstr.64 d7, [r7, #24]
+        vldr.64 d0, [r7, #8]
+        bl      exp
+        vmov.f64        d8, d0
+        vldr.64 d0, [r7, #8]
+        bl      sin
+        vmov.f64        d7, d0
+        vmul.f64        d8, d8, d7
+        vldr.64 d0, [r7]
+        bl      exp
+        vmov.f64        d9, d0
+        vldr.64 d0, [r7]
+        bl      sin
+        vmov.f64        d7, d0
+        vmul.f64        d7, d9, d7
+        vadd.f64        d6, d8, d7
+        vmov.f64        d5, #2.0e+0
+        vdiv.f64        d7, d6, d5
+        vstr.64 d7, [r7, #40]
+        movs    r3, #1
+        str     r3, [r7, #36]
+        b       .L2
+.L3:
+        ldr     r3, [r7, #36]
+        vmov    s15, r3 @ int
+        vcvt.f64.s32    d6, s15
+        vldr.64 d7, [r7, #24]
+        vmul.f64        d6, d6, d7
+        vldr.64 d7, [r7, #8]
+        vadd.f64        d7, d6, d7
+        vmov.f64        d0, d7
+        bl      exp
+        vmov.f64        d8, d0
+        ldr     r3, [r7, #36]
+        vmov    s15, r3 @ int
+        vcvt.f64.s32    d6, s15
+        vldr.64 d7, [r7, #24]
+        vmul.f64        d6, d6, d7
+        vldr.64 d7, [r7, #8]
+        vadd.f64        d7, d6, d7
+        vmov.f64        d0, d7
+        bl      sin
+        vmov.f64        d7, d0
+        vmul.f64        d7, d8, d7
+        vldr.64 d6, [r7, #40]
+        vadd.f64        d7, d6, d7
+        vstr.64 d7, [r7, #40]
+        ldr     r3, [r7, #36]
+        adds    r3, r3, #1
+        str     r3, [r7, #36]
+.L2:
+        ldr     r2, [r7, #36]
+        ldr     r3, [r7, #20]
+        cmp     r2, r3
+        blt     .L3
+        vldr.64 d6, [r7, #40]
+        vldr.64 d7, [r7, #24]
+        vmul.f64        d7, d6, d7
+        vmov.f64        d0, d7
+        adds    r7, r7, #48
+        mov     sp, r7
+        @ sp needed
+        vldm    sp!, {d8-d9}
+        pop     {r7, pc}
+.LC0:
+        .ascii  "%f\000"
+main:
+        @ args = 0, pretend = 0, frame = 8
+        @ frame_needed = 1, uses_anonymous_args = 0
+        push    {r7, lr}
+        sub     sp, sp, #8
+        add     r7, sp, #0
+        vldr.64 d1, .L7
+        vldr.64 d0, .L7+8
+        movw    r0, #16960
+        movt    r0, 15
+        bl      calc_integral
+        vstr.64 d0, [r7]
+        ldrd    r2, [r7]
+        movw    r0, #:lower16:.LC0
+        movt    r0, #:upper16:.LC0
+        bl      printf
+        movs    r3, #0
+        mov     r0, r3
+        adds    r7, r7, #8
+        mov     sp, r7
+        @ sp needed
+        pop     {r7, pc}
+.L7:
+        .word   1413754136
+        .word   1074340347
+        .word   0
+        .word   0

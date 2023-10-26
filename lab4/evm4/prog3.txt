@@ -1,0 +1,69 @@
+calc_integral:
+        @ args = 0, pretend = 0, frame = 0
+        @ frame_needed = 0, uses_anonymous_args = 0
+        push    {r3, r4, r5, lr}
+        vmov    s15, r0 @ int
+        vsub.f64        d6, d1, d0
+        vpush.64        {d8, d9, d10, d11, d12, d13}
+        vcvt.f64.s32    d7, s15
+        vmov.f64        d10, d0
+        vmov.f64        d8, d1
+        mov     r5, r0
+        vdiv.f64        d11, d6, d7
+        bl      exp
+        vmov.f64        d13, d0
+        vmov.f64        d0, d10
+        bl      sin
+        vmov.f64        d12, d0
+        vmov.f64        d0, d8
+        bl      exp
+        vmov.f64        d9, d0
+        vmov.f64        d0, d8
+        bl      sin
+        vmov.f64        d7, #5.0e-1
+        cmp     r5, #1
+        vmul.f64        d9, d9, d0
+        vmla.f64        d9, d13, d12
+        vmul.f64        d9, d9, d7
+        ble     .L2
+        movs    r4, #1
+.L3:
+        vmov    s15, r4 @ int
+        vmov.f64        d12, d10
+        adds    r4, r4, #1
+        vcvt.f64.s32    d7, s15
+        vmla.f64        d12, d7, d11
+        vmov.f64        d0, d12
+        bl      exp
+        vmov.f64        d8, d0
+        vmov.f64        d0, d12
+        bl      sin
+        cmp     r5, r4
+        vmla.f64        d9, d8, d0
+        bne     .L3
+.L2:
+        vmul.f64        d0, d11, d9
+        vldm    sp!, {d8-d13}
+        pop     {r3, r4, r5, pc}
+.LC0:
+        .ascii  "%f\000"
+main:
+        @ args = 0, pretend = 0, frame = 0
+        @ frame_needed = 0, uses_anonymous_args = 0
+        push    {r3, lr}
+        movw    r0, #16960
+        movt    r0, 15
+        vldr.64 d1, .L9
+        vldr.64 d0, .L9+8
+        bl      calc_integral
+        movw    r0, #:lower16:.LC0
+        movt    r0, #:upper16:.LC0
+        vmov    r2, r3, d0
+        bl      printf
+        movs    r0, #0
+        pop     {r3, pc}
+.L9:
+        .word   1413754136
+        .word   1074340347
+        .word   0
+        .word   0
