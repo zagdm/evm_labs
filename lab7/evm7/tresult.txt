@@ -1,0 +1,36 @@
+Test name: evm7
+
+
+Compilation complete
+
+Cfile evm7_nv.c
+
+1: Algorithm running time: 104.439540 s
+2: Algorithm running time: 104.306348 s
+3: Algorithm running time: 104.643511 s
+4: Algorithm running time: 105.794016 s
+5: Algorithm running time: 104.460938 s
+6: Algorithm running time: 104.199050 s
+7: Algorithm running time: 103.816751 s
+
+Cfile evm7_cf.c
+
+1: Algorithm running time: 37.098025 s
+2: Algorithm running time: 37.033733 s
+3: Algorithm running time: 36.523964 s
+4: Algorithm running time: 36.575520 s
+5: Algorithm running time: 37.142798 s
+6: Algorithm running time: 36.836805 s
+7: Algorithm running time: 36.627826 s
+
+Cfile 2evm7_blas.c
+
+1: Algorithm running time: 1.477817 s
+2: Algorithm running time: 1.493228 s
+3: Algorithm running time: 1.495078 s
+4: Algorithm running time: 1.460832 s
+5: Algorithm running time: 1.479090 s
+6: Algorithm running time: 1.474259 s
+7: Algorithm running time: 1.489679 s
+
+Test complete

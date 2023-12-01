@@ -1,0 +1,64 @@
+#!/bin/bash
+
+	#initialisation
+
+if ! [[ -n "$1" ]];
+then echo "Invalid command"
+exit 1
+fi
+my_dir=$(pwd)
+test_name=$1
+repeat_count=1
+shift
+
+while [[ -n "$1" ]]; do
+case "$1" in
+-r) repeat_count=$2 ;;
+*) break ;;
+esac
+shift 2;
+done
+
+if ! [[ -n "$1" ]];
+then echo "Empty cfiles"
+exit 1
+fi
+cfile_set=( $1 )
+for cfile in ${cfile_set[@]}; do
+if ! [[ -f $cfile ]]
+then echo "Cfile is missing"
+exit 1
+fi
+done
+
+	#generation
+
+if [ -d $test_name ]
+then rm -r $test_name
+fi
+mkdir $test_name
+
+cd $test_name
+echo -e "Test name: $test_name\n" >> tresult.txt
+
+for cfile in ${cfile_set[@]}; do
+gcc -o $cfile.o $cfile -lm -I "/usr/include/x86_64-linux-gnu/openblas-pthread/" -L "/usr/lib/x86_64-linux-gnu/openblas-pthread/" -lopenblas -lpthread -march=native -O3 2>>tresult.txt
+if ! [[ -f $cfile.o ]]
+then echo -e "Compilation error\n" >>tresult.txt
+exit 1
+fi
+done
+echo -e "\nCompilation complete" >> tresult.txt
+
+	#test
+
+for cfile in ${cfile_set[@]}; do
+echo -e "\nCfile $cfile" >> tresult.txt
+for ((i = 1; i <= $repeat_count; i++)) do
+echo -n -e "\n$i:" >>tresult.txt
+$( ./$cfile.o >>tresult.txt )
+done
+done
+echo -e "\nTest complete" >> tresult.txt
+
+exit 0
