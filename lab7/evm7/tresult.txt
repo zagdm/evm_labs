@@ -23,7 +23,7 @@ Cfile evm7_cf.c
 6: Algorithm running time: 36.836805 s
 7: Algorithm running time: 36.627826 s
 
-Cfile 2evm7_blas.c
+Cfile evm7_blas.c
 
 1: Algorithm running time: 1.477817 s
 2: Algorithm running time: 1.493228 s

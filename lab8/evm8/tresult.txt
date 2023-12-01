@@ -1,0 +1,20 @@
+Test name: evm1
+
+
+Compilation complete
+
+Optimisation O0
+
+1: 15.12
+2: 15.15
+3: 15.15
+4: 15.03
+5: 15.14
+6: 15.16
+7: 15.11
+8: 15.10
+9: 15.13
+10: 15.07
+Minimum time: 15.03
+
+Test complete
