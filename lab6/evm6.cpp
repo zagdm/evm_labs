@@ -43,6 +43,7 @@ int main() {
 	size_t number = libusb_get_device_list(context, &devices);
 	if (number < 0) {
 		fprintf(stderr, "Cписок устройств не получен. Код: %d\n", x);
+		libusb_exit(context);
 		return 1;
 	}
 	std::cout << "Найдено " << number << "устройств" << std::endl;
