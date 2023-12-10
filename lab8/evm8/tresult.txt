@@ -1,4 +1,3 @@
-Test name: evm1
 Test name: evm8
 
 
