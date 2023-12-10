@@ -1,20 +1,309 @@
 Test name: evm1
+Test name: evm8
 
 
 Compilation complete
 
-Optimisation O0
+Test begin
 
-1: 15.12
-2: 15.15
-3: 15.15
-4: 15.03
-5: 15.14
-6: 15.16
-7: 15.11
-8: 15.10
-9: 15.13
-10: 15.07
-Minimum time: 15.03
-
+1:1: Data size: 1 KB
+Forward: 9.65 , revers: 9.65 , random: 9.88
+1:2: Data size: 1 KB
+Forward: 9.83 , revers: 9.70 , random: 9.68
+1:3: Data size: 1 KB
+Forward: 9.65 , revers: 9.65 , random: 9.90
+1:4: Data size: 1 KB
+Forward: 9.65 , revers: 10.02 , random: 9.65
+1:5: Data size: 1 KB
+Forward: 9.65 , revers: 9.65 , random: 9.83
+2:1: Data size: 2 KB
+Forward: 10.46 , revers: 9.69 , random: 9.70
+2:2: Data size: 2 KB
+Forward: 10.83 , revers: 10.59 , random: 10.39
+2:3: Data size: 2 KB
+Forward: 9.66 , revers: 9.66 , random: 9.66
+2:4: Data size: 2 KB
+Forward: 9.69 , revers: 9.70 , random: 9.69
+2:5: Data size: 2 KB
+Forward: 9.66 , revers: 9.66 , random: 9.66
+3:1: Data size: 3 KB
+Forward: 9.75 , revers: 9.66 , random: 9.66
+3:2: Data size: 3 KB
+Forward: 9.68 , revers: 9.66 , random: 9.66
+3:3: Data size: 3 KB
+Forward: 9.66 , revers: 9.66 , random: 9.66
+3:4: Data size: 3 KB
+Forward: 12.07 , revers: 12.07 , random: 12.07
+3:5: Data size: 3 KB
+Forward: 9.66 , revers: 9.66 , random: 9.66
+4:1: Data size: 4 KB
+Forward: 9.66 , revers: 9.66 , random: 9.66
+4:2: Data size: 4 KB
+Forward: 9.67 , revers: 9.66 , random: 9.66
+4:3: Data size: 4 KB
+Forward: 10.08 , revers: 11.88 , random: 9.71
+4:4: Data size: 4 KB
+Forward: 9.66 , revers: 9.66 , random: 9.66
+4:5: Data size: 4 KB
+Forward: 11.26 , revers: 11.41 , random: 12.74
+5:1: Data size: 6 KB
+Forward: 9.66 , revers: 9.66 , random: 9.66
+5:2: Data size: 6 KB
+Forward: 9.66 , revers: 9.66 , random: 10.89
+5:3: Data size: 6 KB
+Forward: 9.66 , revers: 9.66 , random: 10.47
+5:4: Data size: 6 KB
+Forward: 11.52 , revers: 11.46 , random: 10.83
+5:5: Data size: 6 KB
+Forward: 9.66 , revers: 9.66 , random: 10.00
+6:1: Data size: 8 KB
+Forward: 9.66 , revers: 9.66 , random: 10.75
+6:2: Data size: 8 KB
+Forward: 9.66 , revers: 9.66 , random: 9.66
+6:3: Data size: 8 KB
+Forward: 9.66 , revers: 9.66 , random: 9.72
+6:4: Data size: 8 KB
+Forward: 12.61 , revers: 17.47 , random: 12.40
+6:5: Data size: 8 KB
+Forward: 11.10 , revers: 11.31 , random: 11.13
+7:1: Data size: 11 KB
+Forward: 10.85 , revers: 12.02 , random: 12.07
+7:2: Data size: 11 KB
+Forward: 9.66 , revers: 9.66 , random: 9.66
+7:3: Data size: 11 KB
+Forward: 9.66 , revers: 9.75 , random: 12.62
+7:4: Data size: 11 KB
+Forward: 9.66 , revers: 10.38 , random: 9.80
+7:5: Data size: 11 KB
+Forward: 9.66 , revers: 10.37 , random: 9.66
+8:1: Data size: 16 KB
+Forward: 9.66 , revers: 10.43 , random: 9.68
+8:2: Data size: 16 KB
+Forward: 9.82 , revers: 9.66 , random: 10.14
+8:3: Data size: 16 KB
+Forward: 9.69 , revers: 9.81 , random: 10.07
+8:4: Data size: 16 KB
+Forward: 9.81 , revers: 9.69 , random: 9.79
+8:5: Data size: 16 KB
+Forward: 10.17 , revers: 9.76 , random: 9.69
+9:1: Data size: 23 KB
+Forward: 9.75 , revers: 9.88 , random: 11.20
+9:2: Data size: 23 KB
+Forward: 9.66 , revers: 10.22 , random: 11.23
+9:3: Data size: 23 KB
+Forward: 9.90 , revers: 9.90 , random: 9.79
+9:4: Data size: 23 KB
+Forward: 10.07 , revers: 9.82 , random: 11.69
+9:5: Data size: 23 KB
+Forward: 10.31 , revers: 12.25 , random: 13.42
+10:1: Data size: 32 KB
+Forward: 10.09 , revers: 9.95 , random: 12.90
+10:2: Data size: 32 KB
+Forward: 10.08 , revers: 9.72 , random: 12.89
+10:3: Data size: 32 KB
+Forward: 10.90 , revers: 9.79 , random: 10.19
+10:4: Data size: 32 KB
+Forward: 9.72 , revers: 10.28 , random: 14.36
+10:5: Data size: 32 KB
+Forward: 10.46 , revers: 9.83 , random: 10.63
+11:1: Data size: 45 KB
+Forward: 10.04 , revers: 10.40 , random: 11.69
+11:2: Data size: 45 KB
+Forward: 9.71 , revers: 9.76 , random: 14.17
+11:3: Data size: 45 KB
+Forward: 9.73 , revers: 10.30 , random: 13.95
+11:4: Data size: 45 KB
+Forward: 10.18 , revers: 9.95 , random: 11.76
+11:5: Data size: 45 KB
+Forward: 11.82 , revers: 11.12 , random: 11.75
+12:1: Data size: 64 KB
+Forward: 9.71 , revers: 10.08 , random: 13.57
+12:2: Data size: 64 KB
+Forward: 9.87 , revers: 9.83 , random: 13.25
+12:3: Data size: 64 KB
+Forward: 9.75 , revers: 9.83 , random: 13.35
+12:4: Data size: 64 KB
+Forward: 12.09 , revers: 10.92 , random: 13.53
+12:5: Data size: 64 KB
+Forward: 10.18 , revers: 9.77 , random: 13.23
+13:1: Data size: 91 KB
+Forward: 11.27 , revers: 10.03 , random: 17.50
+13:2: Data size: 91 KB
+Forward: 9.86 , revers: 10.31 , random: 15.45
+13:3: Data size: 91 KB
+Forward: 12.31 , revers: 10.87 , random: 14.23
+13:4: Data size: 91 KB
+Forward: 9.91 , revers: 10.20 , random: 14.54
+13:5: Data size: 91 KB
+Forward: 9.90 , revers: 9.98 , random: 14.10
+14:1: Data size: 128 KB
+Forward: 10.76 , revers: 9.78 , random: 14.92
+14:2: Data size: 128 KB
+Forward: 11.71 , revers: 9.84 , random: 17.54
+14:3: Data size: 128 KB
+Forward: 10.23 , revers: 9.86 , random: 15.50
+14:4: Data size: 128 KB
+Forward: 10.43 , revers: 9.87 , random: 14.82
+14:5: Data size: 128 KB
+Forward: 11.18 , revers: 9.87 , random: 14.80
+15:1: Data size: 181 KB
+Forward: 10.10 , revers: 11.74 , random: 15.60
+15:2: Data size: 181 KB
+Forward: 9.90 , revers: 10.95 , random: 16.93
+15:3: Data size: 181 KB
+Forward: 10.36 , revers: 9.85 , random: 15.75
+15:4: Data size: 181 KB
+Forward: 10.63 , revers: 9.82 , random: 15.47
+15:5: Data size: 181 KB
+Forward: 9.86 , revers: 9.87 , random: 15.36
+16:1: Data size: 256 KB
+Forward: 10.12 , revers: 10.06 , random: 20.64
+16:2: Data size: 256 KB
+Forward: 12.29 , revers: 10.05 , random: 17.11
+16:3: Data size: 256 KB
+Forward: 10.23 , revers: 10.00 , random: 16.00
+16:4: Data size: 256 KB
+Forward: 9.88 , revers: 11.33 , random: 15.88
+16:5: Data size: 256 KB
+Forward: 10.34 , revers: 9.80 , random: 17.54
+17:1: Data size: 362 KB
+Forward: 10.02 , revers: 9.98 , random: 17.78
+17:2: Data size: 362 KB
+Forward: 10.29 , revers: 10.00 , random: 19.07
+17:3: Data size: 362 KB
+Forward: 10.79 , revers: 9.86 , random: 18.17
+17:4: Data size: 362 KB
+Forward: 10.09 , revers: 9.88 , random: 17.83
+17:5: Data size: 362 KB
+Forward: 9.91 , revers: 9.86 , random: 17.94
+18:1: Data size: 512 KB
+Forward: 10.49 , revers: 9.83 , random: 21.28
+18:2: Data size: 512 KB
+Forward: 10.76 , revers: 9.82 , random: 21.41
+18:3: Data size: 512 KB
+Forward: 10.54 , revers: 9.81 , random: 21.49
+18:4: Data size: 512 KB
+Forward: 10.53 , revers: 9.78 , random: 20.59
+18:5: Data size: 512 KB
+Forward: 9.91 , revers: 10.54 , random: 21.46
+19:1: Data size: 724 KB
+Forward: 10.34 , revers: 9.86 , random: 25.67
+19:2: Data size: 724 KB
+Forward: 10.06 , revers: 10.30 , random: 25.14
+19:3: Data size: 724 KB
+Forward: 9.86 , revers: 9.81 , random: 26.35
+19:4: Data size: 724 KB
+Forward: 10.34 , revers: 10.27 , random: 25.55
+19:5: Data size: 724 KB
+Forward: 9.92 , revers: 9.84 , random: 25.46
+20:1: Data size: 1024 KB
+Forward: 9.81 , revers: 10.22 , random: 29.62
+20:2: Data size: 1024 KB
+Forward: 10.27 , revers: 10.21 , random: 30.23
+20:3: Data size: 1024 KB
+Forward: 10.05 , revers: 10.31 , random: 29.74
+20:4: Data size: 1024 KB
+Forward: 9.85 , revers: 10.23 , random: 30.51
+20:5: Data size: 1024 KB
+Forward: 9.90 , revers: 10.17 , random: 30.65
+21:1: Data size: 1448 KB
+Forward: 9.87 , revers: 10.12 , random: 33.64
+21:2: Data size: 1448 KB
+Forward: 9.87 , revers: 10.29 , random: 32.34
+21:3: Data size: 1448 KB
+Forward: 10.09 , revers: 9.81 , random: 33.19
+21:4: Data size: 1448 KB
+Forward: 9.92 , revers: 9.81 , random: 32.82
+21:5: Data size: 1448 KB
+Forward: 9.89 , revers: 9.83 , random: 33.00
+22:1: Data size: 2048 KB
+Forward: 10.26 , revers: 10.35 , random: 42.92
+22:2: Data size: 2048 KB
+Forward: 9.98 , revers: 9.85 , random: 35.50
+22:3: Data size: 2048 KB
+Forward: 10.21 , revers: 9.82 , random: 34.84
+22:4: Data size: 2048 KB
+Forward: 10.17 , revers: 10.34 , random: 35.68
+22:5: Data size: 2048 KB
+Forward: 10.29 , revers: 9.80 , random: 35.22
+23:1: Data size: 2896 KB
+Forward: 9.94 , revers: 9.80 , random: 38.11
+23:2: Data size: 2896 KB
+Forward: 10.05 , revers: 9.89 , random: 40.72
+23:3: Data size: 2896 KB
+Forward: 9.96 , revers: 9.92 , random: 38.18
+23:4: Data size: 2896 KB
+Forward: 10.12 , revers: 9.95 , random: 41.04
+23:5: Data size: 2896 KB
+Forward: 9.99 , revers: 10.08 , random: 37.37
+24:1: Data size: 4096 KB
+Forward: 10.04 , revers: 9.90 , random: 67.43
+24:2: Data size: 4096 KB
+Forward: 10.02 , revers: 9.99 , random: 67.64
+24:3: Data size: 4096 KB
+Forward: 10.23 , revers: 10.04 , random: 68.19
+24:4: Data size: 4096 KB
+Forward: 9.86 , revers: 9.93 , random: 67.16
+24:5: Data size: 4096 KB
+Forward: 9.96 , revers: 9.81 , random: 67.50
+25:1: Data size: 5793 KB
+Forward: 10.15 , revers: 10.03 , random: 128.74
+25:2: Data size: 5793 KB
+Forward: 10.13 , revers: 10.15 , random: 132.65
+25:3: Data size: 5793 KB
+Forward: 9.93 , revers: 10.03 , random: 129.13
+25:4: Data size: 5793 KB
+Forward: 9.96 , revers: 9.95 , random: 129.90
+25:5: Data size: 5793 KB
+Forward: 9.91 , revers: 10.05 , random: 128.92
+26:1: Data size: 8192 KB
+Forward: 10.04 , revers: 9.96 , random: 194.62
+26:2: Data size: 8192 KB
+Forward: 10.02 , revers: 9.91 , random: 193.16
+26:3: Data size: 8192 KB
+Forward: 9.99 , revers: 9.87 , random: 193.29
+26:4: Data size: 8192 KB
+Forward: 9.95 , revers: 10.05 , random: 192.90
+26:5: Data size: 8192 KB
+Forward: 9.91 , revers: 10.02 , random: 193.30
+27:1: Data size: 11585 KB
+Forward: 10.15 , revers: 9.89 , random: 239.05
+27:2: Data size: 11585 KB
+Forward: 10.05 , revers: 10.04 , random: 238.15
+27:3: Data size: 11585 KB
+Forward: 10.01 , revers: 9.97 , random: 237.86
+27:4: Data size: 11585 KB
+Forward: 10.08 , revers: 9.96 , random: 237.92
+27:5: Data size: 11585 KB
+Forward: 10.06 , revers: 9.90 , random: 238.10
+28:1: Data size: 16384 KB
+Forward: 9.99 , revers: 10.03 , random: 269.24
+28:2: Data size: 16384 KB
+Forward: 10.02 , revers: 9.94 , random: 269.23
+28:3: Data size: 16384 KB
+Forward: 9.99 , revers: 9.99 , random: 270.00
+28:4: Data size: 16384 KB
+Forward: 9.98 , revers: 10.26 , random: 317.05
+28:5: Data size: 16384 KB
+Forward: 11.86 , revers: 12.32 , random: 318.04
+29:1: Data size: 23170 KB
+Forward: 11.84 , revers: 13.22 , random: 343.77
+29:2: Data size: 23170 KB
+Forward: 10.13 , revers: 10.09 , random: 296.95
+29:3: Data size: 23170 KB
+Forward: 9.92 , revers: 10.02 , random: 292.93
+29:4: Data size: 23170 KB
+Forward: 10.07 , revers: 10.03 , random: 291.24
+29:5: Data size: 23170 KB
+Forward: 10.00 , revers: 10.00 , random: 291.43
+30:1: Data size: 32768 KB
+Forward: 9.92 , revers: 9.96 , random: 308.10
+30:2: Data size: 32768 KB
+Forward: 9.99 , revers: 10.05 , random: 308.16
+30:3: Data size: 32768 KB
+Forward: 9.90 , revers: 9.95 , random: 308.53
+30:4: Data size: 32768 KB
+Forward: 9.88 , revers: 9.98 , random: 308.61
+30:5: Data size: 32768 KB
+Forward: 10.00 , revers: 9.95 , random: 308.50
 Test complete
