@@ -1,0 +1,64 @@
+#!/bin/bash
+
+	#initialisation
+
+if ! [[ -n "$1" ]];
+then echo "Invalid command"
+exit 1
+fi
+my_dir=$(pwd)
+test_name=$1
+repeat_count=1
+steps_count=1
+shift
+
+while [[ -n "$1" ]]; do
+case "$1" in
+-r) repeat_count=$2 ;;
+-s) steps_count=$2 ;;
+*) break ;;
+esac
+shift 2;
+done
+
+if ! [[ -n "$1" ]];
+then echo "Empty cfiles"
+exit 1
+fi
+for cfile in $@; do
+if [ -f $cfile ]
+then comp_arg="$comp_arg $my_dir/$cfile"
+else echo "Cfile is missing"
+exit 1
+fi
+done
+
+	#generation
+
+if [ -d $test_name ]
+then rm -r $test_name
+fi
+mkdir $test_name
+
+cd $test_name
+echo -e "Test name: $test_name\n" >> tresult.txt
+
+g++ -O1 -o prog $comp_arg -lm 2>>tresult.txt
+if ! [[ -f prog$opt ]]
+then echo -e "Compilation error\n" >>tresult.txt
+exit 1
+fi
+echo -e "\nCompilation complete" >> tresult.txt
+
+	#test
+
+echo -e "\nTest begin" >> tresult.txt
+for ((n = 1; n <= $steps_count; n++)) do
+for ((i = 1; i <= $repeat_count; i++)) do
+echo -n -e "\n$n:$i: " >>tresult.txt
+$(./prog $n >>tresult.txt)
+done
+done
+echo -e "\nTest complete" >> tresult.txt
+
+exit 0
