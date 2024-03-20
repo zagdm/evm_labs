@@ -3,7 +3,7 @@
 #include <mpi.h>
 
 const double eps = 0.00001;
-const int N = 65000;
+const int N = 46000;
 
 void v_matrix_inc_mult(const double* matrix, const double* vector, double* result, int v_size, int m_size, int m_rank) {
     for (int i = 0; i < m_size; i++) {
@@ -49,12 +49,12 @@ int main(int argc, char** argv) {
     MPI_Comm_rank(MPI_COMM_WORLD, &rank);
     MPI_Comm_size(MPI_COMM_WORLD, &size);
     if (size > N) {
-        fprintf(stderr, "To many process");
+        fprintf(stderr, "To many process\n");
         MPI_Finalize();
         return 0;
     }
     
-    int start = MPI_Wtime();
+    double start = MPI_Wtime();
 
     void* mem[8] = { 0, 0, 0, 0, 0, 0, 0, 0 };
     double* y = (double*)(mem[0] = malloc(N * sizeof(double)));
@@ -125,12 +125,12 @@ int main(int argc, char** argv) {
         v_linear_comb(part_x, part_y, part_x, part_size, t);
     }
 
-    int end = MPI_Wtime();
+    double end = MPI_Wtime();
 
     MPI_Finalize();
     if (rank == 0) {
         fprintf(stdout, "Iteration count: %d\n", iteration);
-        fprintf(stdout, "Time passed: %ld\n", (size_t)(end - start));
+        fprintf(stdout, "Time passed: %lf\n", end - start);
     }
     return main_exit(mem);
 }

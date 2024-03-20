@@ -46,7 +46,7 @@ int main(int argc, char** argv) {
         return 0;
     }
 
-    int start = MPI_Wtime();
+    double start = MPI_Wtime();
 
     void* mem[8] = { 0, 0, 0, 0, 0, 0, 0, 0 };
     double* x = (double*)(mem[0] = calloc(N, sizeof(double)));
@@ -111,12 +111,12 @@ int main(int argc, char** argv) {
         MPI_Allgatherv(tmp, part_size, MPI_DOUBLE, x, part_table, shift_table, MPI_DOUBLE, MPI_COMM_WORLD);
     }
 
-    int end = MPI_Wtime();
+    double end = MPI_Wtime();
 
     MPI_Finalize();
     if (rank == 0) {
         fprintf(stdout, "Iteration count: %d\n", iteration);
-        fprintf(stdout, "Time passed: %ld\n", (size_t)(end - start));
+        fprintf(stdout, "Time passed: %lf\n",  end - start);
     }
     return main_exit(mem);
 }
