@@ -3,7 +3,7 @@
 #include <mpi.h>
 
 const double eps = 0.00001;
-const int N = 65000;
+const int N = 46000;
 
 void v_matrix_mult(const double* matrix, const double* vector, double* result, int v_size, int m_size) {
     for (int i = 0; i < m_size; i++) {
