@@ -1,0 +1,110 @@
+Time passed: 83.306420
+Maximud phi different 0.403828
+Time passed: 83.483836
+Maximud phi different 0.403828
+Time passed: 83.451733
+Maximud phi different 0.403828
+Time passed: 83.481563
+Maximud phi different 0.403828
+Time passed: 83.349488
+Maximud phi different 0.403828
+Time passed: 83.354876
+Maximud phi different 0.403828
+Time passed: 83.385525
+Maximud phi different 0.403828
+Time passed: 83.441815
+Maximud phi different 0.403828
+Time passed: 83.455552
+Maximud phi different 0.403828
+Time passed: 83.442880
+Maximud phi different 0.403828
+fin
+//////////////////////
+Time passed: 44.259589
+Maximud phi different 0.403828
+Time passed: 44.390325
+Maximud phi different 0.403828
+Time passed: 44.385740
+Maximud phi different 0.403828
+Time passed: 44.335006
+Maximud phi different 0.403828
+Time passed: 44.272773
+Maximud phi different 0.403828
+Time passed: 44.336607
+Maximud phi different 0.403828
+Time passed: 44.393097
+Maximud phi different 0.403828
+Time passed: 44.257047
+Maximud phi different 0.403828
+Time passed: 44.314134
+Maximud phi different 0.403828
+Time passed: 44.390943
+Maximud phi different 0.403828
+fin
+////////////////////////
+Time passed: 23.211774
+Maximud phi different 0.403828
+Time passed: 23.263496
+Maximud phi different 0.403828
+Time passed: 23.281212
+Maximud phi different 0.403828
+Time passed: 23.284862
+Maximud phi different 0.403828
+Time passed: 23.270534
+Maximud phi different 0.403828
+Time passed: 23.256698
+Maximud phi different 0.403828
+Time passed: 23.295208
+Maximud phi different 0.403828
+Time passed: 23.273748
+Maximud phi different 0.403828
+Time passed: 23.300432
+Maximud phi different 0.403828
+Time passed: 23.249017
+Maximud phi different 0.403828
+fin
+//////////////////////////////
+Time passed: 12.853376
+Maximud phi different 0.403828
+Time passed: 12.568777
+Maximud phi different 0.403828
+Time passed: 12.563653
+Maximud phi different 0.403828
+Time passed: 12.591557
+Maximud phi different 0.403828
+Time passed: 12.613420
+Maximud phi different 0.403828
+Time passed: 12.628707
+Maximud phi different 0.403828
+Time passed: 12.636896
+Maximud phi different 0.403828
+Time passed: 12.638290
+Maximud phi different 0.403828
+Time passed: 12.629593
+Maximud phi different 0.403828
+Time passed: 12.636816
+Maximud phi different 0.403828
+fin
+////////////////////////////////////
+Time passed: 6.478592
+Maximud phi different 0.403828
+Time passed: 6.562330
+Maximud phi different 0.403828
+Time passed: 6.859265
+Maximud phi different 0.403828
+Time passed: 6.848586
+Maximud phi different 0.403828
+Time passed: 6.862837
+Maximud phi different 0.403828
+Time passed: 6.878263
+Maximud phi different 0.403828
+Time passed: 6.863750
+Maximud phi different 0.403828
+Time passed: 6.798058
+Maximud phi different 0.403828
+Time passed: 6.860630
+Maximud phi different 0.403828
+Time passed: 6.860799
+Maximud phi different 0.403828
+/////////////////////////////////////
+
