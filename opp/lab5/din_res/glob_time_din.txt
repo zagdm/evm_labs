@@ -1,0 +1,35 @@
+1 proc:
+Total time: 400.780674
+Total time: 400.776427
+Total time: 400.779521
+Total time: 400.776486
+Total time: 400.776570
+Total time: 400.775561
+2 proc :
+Total time: 209.887011
+Total time: 209.964991
+Total time: 209.928003
+Total time: 209.408997
+Total time: 210.011985
+Total time: 209.664990
+4 proc:
+Total time: 107.407983
+Total time: 107.946992
+Total time: 107.257988
+Total time: 108.436984
+Total time: 107.925008
+Total time: 108.089985
+8 proc:
+Total time: 59.076936
+Total time: 59.755960
+Total time: 59.486121
+Total time: 58.928993
+Total time: 59.179007
+Total time: 59.786053
+16 proc:
+Total time: 40.313991
+Total time: 40.789982
+Total time: 40.051003
+Total time: 40.808973
+Total time: 40.819972
+Total time: 40.085968

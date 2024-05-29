@@ -1,0 +1,74 @@
+SLURM_JOBID=71758
+SLURM_SUBMIT_DIR=/home/fit_opp/22210/zagneev/lab5
+SLURM_JOB_NODELIST=gpn-node16
+SLURM_NODELIST=gpn-node16
+SLURM_CPUS_PER_TASK=1
+SLURM_NTASKS=1
+SLURM_NNODES=1
+Local work time: 40.469083, worked 40000000, iter 1, rank 0
+Local work time: 40.463755, worked 40000000, iter 2, rank 0
+Local work time: 40.461150, worked 40000000, iter 3, rank 0
+Local work time: 40.468416, worked 40000000, iter 4, rank 0
+Local work time: 40.468964, worked 40000000, iter 5, rank 0
+Local work time: 40.462342, worked 40000000, iter 6, rank 0
+Local work time: 40.462943, worked 40000000, iter 7, rank 0
+Local work time: 40.469963, worked 40000000, iter 8, rank 0
+Local work time: 40.466162, worked 40000000, iter 9, rank 0
+Local work time: 40.462976, worked 40000000, iter 10, rank 0
+Total time: 404.656000
+Local work time: 40.460312, worked 40000000, iter 1, rank 0
+Local work time: 40.463833, worked 40000000, iter 2, rank 0
+Local work time: 40.460024, worked 40000000, iter 3, rank 0
+Local work time: 40.458984, worked 40000000, iter 4, rank 0
+Local work time: 40.459044, worked 40000000, iter 5, rank 0
+Local work time: 40.468201, worked 40000000, iter 6, rank 0
+Local work time: 40.463420, worked 40000000, iter 7, rank 0
+Local work time: 40.461901, worked 40000000, iter 8, rank 0
+Local work time: 40.468466, worked 40000000, iter 9, rank 0
+Local work time: 40.467210, worked 40000000, iter 10, rank 0
+Total time: 404.631646
+Local work time: 40.462288, worked 40000000, iter 1, rank 0
+Local work time: 40.473163, worked 40000000, iter 2, rank 0
+Local work time: 40.466637, worked 40000000, iter 3, rank 0
+Local work time: 40.463493, worked 40000000, iter 4, rank 0
+Local work time: 40.462880, worked 40000000, iter 5, rank 0
+Local work time: 40.464009, worked 40000000, iter 6, rank 0
+Local work time: 40.457930, worked 40000000, iter 7, rank 0
+Local work time: 40.461651, worked 40000000, iter 8, rank 0
+Local work time: 40.458151, worked 40000000, iter 9, rank 0
+Local work time: 40.457881, worked 40000000, iter 10, rank 0
+Total time: 404.628344
+Local work time: 40.464431, worked 40000000, iter 1, rank 0
+Local work time: 40.463087, worked 40000000, iter 2, rank 0
+Local work time: 40.458789, worked 40000000, iter 3, rank 0
+Local work time: 40.455350, worked 40000000, iter 4, rank 0
+Local work time: 40.461063, worked 40000000, iter 5, rank 0
+Local work time: 40.468976, worked 40000000, iter 6, rank 0
+Local work time: 40.464165, worked 40000000, iter 7, rank 0
+Local work time: 40.463759, worked 40000000, iter 8, rank 0
+Local work time: 40.466062, worked 40000000, iter 9, rank 0
+Local work time: 40.469501, worked 40000000, iter 10, rank 0
+Total time: 404.635440
+Local work time: 40.467860, worked 40000000, iter 1, rank 0
+Local work time: 40.458800, worked 40000000, iter 2, rank 0
+Local work time: 40.461974, worked 40000000, iter 3, rank 0
+Local work time: 40.466127, worked 40000000, iter 4, rank 0
+Local work time: 40.462282, worked 40000000, iter 5, rank 0
+Local work time: 40.463162, worked 40000000, iter 6, rank 0
+Local work time: 40.467236, worked 40000000, iter 7, rank 0
+Local work time: 40.465002, worked 40000000, iter 8, rank 0
+Local work time: 40.459724, worked 40000000, iter 9, rank 0
+Local work time: 40.469930, worked 40000000, iter 10, rank 0
+Total time: 404.642348
+Local work time: 40.460877, worked 40000000, iter 1, rank 0
+Local work time: 40.459904, worked 40000000, iter 2, rank 0
+Local work time: 40.463071, worked 40000000, iter 3, rank 0
+Local work time: 40.460907, worked 40000000, iter 4, rank 0
+Local work time: 40.464464, worked 40000000, iter 5, rank 0
+Local work time: 40.463128, worked 40000000, iter 6, rank 0
+Local work time: 40.469933, worked 40000000, iter 7, rank 0
+Local work time: 40.466440, worked 40000000, iter 8, rank 0
+Local work time: 40.463769, worked 40000000, iter 9, rank 0
+Local work time: 40.464625, worked 40000000, iter 10, rank 0
+Total time: 404.637383
+fi
